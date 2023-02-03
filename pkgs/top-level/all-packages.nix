@@ -1383,7 +1383,7 @@ with pkgs;
 
   asleap = callPackage ../tools/networking/asleap { };
 
-  bootloadHID = callPackage ../tools/misc/bootloadhid { };
+  bootloadhid = callPackage ../tools/misc/bootloadhid { };
 
   butler = callPackage ../games/itch/butler.nix {
     inherit (darwin.apple_sdk.frameworks) Cocoa;
