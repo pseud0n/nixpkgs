@@ -189,7 +189,22 @@
           <literal>doInstallCheck</literal> is set. (Note that this
           change will not cause breakage to derivations with
           <literal>strictDeps</literal> unset, which are most packages
-          except python, rust and go packages).
+          except python, rust, ocaml and go packages).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>buildDunePackage</literal> now defaults to
+          <literal>strictDeps = true</literal> which means that any
+          library should go into <literal>buildInputs</literal> or
+          <literal>checkInputs</literal>. Any executable that is run on
+          the building machine should go into
+          <literal>nativeBuildInputs</literal> or
+          <literal>nativeCheckInputs</literal> respectively. Example of
+          executables are <literal>ocaml</literal>,
+          <literal>findlib</literal> and <literal>menhir</literal>. PPXs
+          are libraries which are built by dune and should therefore not
+          go into <literal>nativeBuildInputs</literal>.
         </para>
       </listitem>
       <listitem>
@@ -525,6 +540,16 @@
           next release and CommonMark will become the default. DocBook
           option documentation that has not been migrated until then
           will no longer render properly or cause errors.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          NixOS now defaults to using nsncd (a non-caching
+          reimplementation in Rust) as NSS lookup dispatcher, instead of
+          the buggy and deprecated glibc-provided nscd. If you need to
+          switch back, set
+          <literal>services.nscd.enableNsncd = false</literal>, but
+          please open an issue in nixpkgs so your issue can be fixed.
         </para>
       </listitem>
       <listitem>

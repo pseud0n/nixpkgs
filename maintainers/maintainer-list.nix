@@ -5105,6 +5105,12 @@
     githubId = 36706276;
     name = "Fufezan Mihai";
   };
+  fugi = {
+    email = "me@fugi.dev";
+    github = "FugiMuffi";
+    githubId = 21362942;
+    name = "Fugi";
+  };
   fusion809 = {
     email = "brentonhorne77@gmail.com";
     github = "fusion809";
@@ -12880,6 +12886,12 @@
     githubId = 6022042;
     name = "Sam Parkinson";
   };
+  samhug = {
+    email = "s@m-h.ug";
+    github = "samhug";
+    githubId = 171470;
+    name = "Sam Hug";
+  };
   samlich = {
     email = "nixos@samli.ch";
     github = "samlich";
@@ -13845,6 +13857,12 @@
     github = "Steell";
     githubId = 1699155;
     name = "Steve Elliott";
+  };
+  stefanfehrenbach = {
+    email = "stefan.fehrenbach@gmail.com";
+    github = "fehrenbach";
+    githubId = 203168;
+    name = "Stefan Fehrenbach";
   };
   stehessel = {
     email = "stephan@stehessel.de";
