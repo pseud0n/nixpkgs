@@ -11872,7 +11872,7 @@
   pseud0n = {
     email = "palermo-phillips@proton.me";
     github = "pseud0n";
-    githubID = 41120880;
+    githubId = 41120880;
     name = "Palermo Phillips";
   };
   pshirshov = {
