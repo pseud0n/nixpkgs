@@ -692,6 +692,13 @@
       </listitem>
       <listitem>
         <para>
+          Grafana Tempo has been updated to version 2.0. See the
+          <link xlink:href="https://grafana.com/docs/tempo/latest/release-notes/v2-0/#upgrade-considerations">upstream
+          upgrade guide</link> for migration instructions.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           A new <literal>virtualisation.rosetta</literal> module was
           added to allow running <literal>x86_64</literal> binaries
           through
@@ -849,6 +856,12 @@
           <link xlink:href="https://xastir.org/index.php/Main_Page">Xastir</link>
           can now access AX.25 interfaces via the
           <literal>libax25</literal> package.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>tvbrowser-bin</literal> was removed, and now
+          <literal>tvbrowser</literal> is built from source.
         </para>
       </listitem>
       <listitem>
