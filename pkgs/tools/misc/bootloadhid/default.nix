@@ -12,20 +12,18 @@ stdenv.mkDerivation {
 
   buildInputs = with pkgs; [ pkgsCross.avr.buildPackages.gcc libusb-compat-0_1 ];
 
-  buildPhase = ''
-    cd commandline
-    make
-  '';
+  makeFlags = [ "-C" "commandline" ];
 
   installPhase = ''
     mkdir -p $out/bin
-    chmod +x bootloadHID
-    cp bootloadHID $out/bin
+    cp commandline/bootloadHID $out/bin
+    chmod +x $out/bin
   '';
 
   meta = {
     description = "A software-only implementation of a low-speed USB device for Atmel’s AVR® microcontrollers";
     license = lib.licenses.gpl2;
     maintainers = [ lib.maintainers.pseud0n ];
+    homepage = "http://www.obdev.at/avrusb/";
   };
 }
