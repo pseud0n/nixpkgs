@@ -743,6 +743,8 @@ let
 
     lastfm = callPackage ../development/ocaml-modules/lastfm { };
 
+    lem = callPackage ../development/ocaml-modules/lem { };
+
     lens = callPackage ../development/ocaml-modules/lens { };
 
     letsencrypt = callPackage ../development/ocaml-modules/letsencrypt { };
@@ -756,6 +758,8 @@ let
     };
 
     linenoise = callPackage ../development/ocaml-modules/linenoise { };
+
+    linksem = callPackage ../development/ocaml-modules/linksem { };
 
     llvm = callPackage ../development/ocaml-modules/llvm {
       libllvm = pkgs.llvmPackages_10.libllvm;
@@ -1238,6 +1242,10 @@ let
 
     rock = callPackage ../development/ocaml-modules/rock { };
 
+    rusage = callPackage ../development/ocaml-modules/rusage { };
+
+    sail = callPackage ../development/ocaml-modules/sail { };
+
     samplerate = callPackage ../development/ocaml-modules/samplerate { };
 
     secp256k1 = callPackage ../development/ocaml-modules/secp256k1 {
@@ -1251,6 +1259,8 @@ let
     shine = callPackage ../development/ocaml-modules/shine {
       inherit (pkgs) shine;
     };
+
+    simple-diff = callPackage ../development/ocaml-modules/simple-diff { };
 
     sosa = callPackage ../development/ocaml-modules/sosa { };
 

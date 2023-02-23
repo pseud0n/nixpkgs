@@ -92,6 +92,7 @@ in {
   bcachefs = handleTestOn ["x86_64-linux" "aarch64-linux"] ./bcachefs.nix {};
   beanstalkd = handleTest ./beanstalkd.nix {};
   bees = handleTest ./bees.nix {};
+  binary-cache = handleTest ./binary-cache.nix {};
   bind = handleTest ./bind.nix {};
   bird = handleTest ./bird.nix {};
   bitcoind = handleTest ./bitcoind.nix {};
@@ -367,6 +368,7 @@ in {
   login = handleTest ./login.nix {};
   logrotate = handleTest ./logrotate.nix {};
   loki = handleTest ./loki.nix {};
+  luks = handleTest ./luks.nix {};
   lvm2 = handleTest ./lvm2 {};
   lxd = handleTest ./lxd.nix {};
   lxd-nftables = handleTest ./lxd-nftables.nix {};
@@ -489,6 +491,7 @@ in {
   ombi = handleTest ./ombi.nix {};
   openarena = handleTest ./openarena.nix {};
   openldap = handleTest ./openldap.nix {};
+  opensearch = discoverTests (import ./opensearch.nix);
   openresty-lua = handleTest ./openresty-lua.nix {};
   opensmtpd = handleTest ./opensmtpd.nix {};
   opensmtpd-rspamd = handleTest ./opensmtpd-rspamd.nix {};
@@ -520,7 +523,6 @@ in {
   peering-manager = handleTest ./web-apps/peering-manager.nix {};
   peertube = handleTestOn ["x86_64-linux"] ./web-apps/peertube.nix {};
   pgadmin4 = handleTest ./pgadmin4.nix {};
-  pgadmin4-standalone = handleTest ./pgadmin4-standalone.nix {};
   pgjwt = handleTest ./pgjwt.nix {};
   pgmanage = handleTest ./pgmanage.nix {};
   phosh = handleTest ./phosh.nix {};
@@ -645,6 +647,7 @@ in {
   systemd-confinement = handleTest ./systemd-confinement.nix {};
   systemd-coredump = handleTest ./systemd-coredump.nix {};
   systemd-cryptenroll = handleTest ./systemd-cryptenroll.nix {};
+  systemd-credentials-tpm2 = handleTest ./systemd-credentials-tpm2.nix {};
   systemd-escaping = handleTest ./systemd-escaping.nix {};
   systemd-initrd-btrfs-raid = handleTest ./systemd-initrd-btrfs-raid.nix {};
   systemd-initrd-luks-fido2 = handleTest ./systemd-initrd-luks-fido2.nix {};
@@ -655,6 +658,7 @@ in {
   systemd-initrd-shutdown = handleTest ./systemd-shutdown.nix { systemdStage1 = true; };
   systemd-initrd-simple = handleTest ./systemd-initrd-simple.nix {};
   systemd-initrd-swraid = handleTest ./systemd-initrd-swraid.nix {};
+  systemd-initrd-vconsole = handleTest ./systemd-initrd-vconsole.nix {};
   systemd-journal = handleTest ./systemd-journal.nix {};
   systemd-machinectl = handleTest ./systemd-machinectl.nix {};
   systemd-networkd = handleTest ./systemd-networkd.nix {};
@@ -666,6 +670,7 @@ in {
   systemd-nspawn = handleTest ./systemd-nspawn.nix {};
   systemd-oomd = handleTest ./systemd-oomd.nix {};
   systemd-portabled = handleTest ./systemd-portabled.nix {};
+  systemd-repart = handleTest ./systemd-repart.nix {};
   systemd-shutdown = handleTest ./systemd-shutdown.nix {};
   systemd-timesyncd = handleTest ./systemd-timesyncd.nix {};
   systemd-user-tmpfiles-rules = handleTest ./systemd-user-tmpfiles-rules.nix {};

@@ -5,16 +5,6 @@
 , espeak-ng
 }:
 
-# USAGE:
-# $ tts-server --list_models
-# # pick your favorite vocoder/tts model
-# $ tts-server --model_name tts_models/en/ljspeech/glow-tts --vocoder_name vocoder_models/universal/libri-tts/fullband-melgan
-#
-# If you upgrade from an old version you may have to delete old models from ~/.local/share/tts
-#
-# For now, for deployment check the systemd unit in the pull request:
-#   https://github.com/NixOS/nixpkgs/pull/103851#issue-521121136
-
 let
   python = python3.override {
     packageOverrides = self: super: {
@@ -33,28 +23,15 @@ let
 in
 python.pkgs.buildPythonApplication rec {
   pname = "tts";
-  version = "0.10.2";
+  version = "0.11.1";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "coqui-ai";
     repo = "TTS";
     rev = "refs/tags/v${version}";
-    hash = "sha256-IcuRhsURgEYIuS7ldZtxAy4Z/XNDehTGsOfYW+DhScg=";
+    hash = "sha256-EVFFETiGbrouUsrIhMFZEex3UGCCWTI3CC4yFAcERyw=";
   };
-
-  patches = [
-    # Use packaging.version for version comparisons
-    (fetchpatch {
-      url = "https://github.com/coqui-ai/TTS/commit/77a9ef8ac97ea1b0f7f8d8287dba69a74fdf22ce.patch";
-      hash = "sha256-zWJmINyxw2efhR9KIVkDPHao5703zlpCKwdzOh/1APY=";
-    })
-    # Fix espeak version detection logic
-    (fetchpatch {
-      url = "https://github.com/coqui-ai/TTS/commit/0031df0143b069d7db59ba04d1adfafcc1a92f47.patch";
-      hash = "sha256-6cL9YqWrB+0QomINpA9BxdYmEDpXF03udGEchydQmBA=";
-    })
-  ];
 
   postPatch = let
     relaxedConstraints = [
@@ -149,6 +126,7 @@ python.pkgs.buildPythonApplication rec {
     "test_models_offset_2_step_3"
     "test_run_all_models"
     "test_synthesize"
+    "test_voice_cloning"
     "test_voice_conversion"
     "test_multi_speaker_multi_lingual_model"
     "test_single_speaker_model"
@@ -166,9 +144,12 @@ python.pkgs.buildPythonApplication rec {
     "tests/tts_tests/test_align_tts_train.py"
     "tests/tts_tests/test_fast_pitch_speaker_emb_train.py"
     "tests/tts_tests/test_fast_pitch_train.py"
+    "tests/tts_tests/test_fastspeech_2_speaker_emb_train.py"
+    "tests/tts_tests/test_fastspeech_2_train.py"
     "tests/tts_tests/test_glow_tts_d-vectors_train.py"
     "tests/tts_tests/test_glow_tts_speaker_emb_train.py"
     "tests/tts_tests/test_glow_tts_train.py"
+    "tests/tts_tests/test_neuralhmm_tts_train.py"
     "tests/tts_tests/test_overflow_train.py"
     "tests/tts_tests/test_speedy_speech_train.py"
     "tests/tts_tests/test_tacotron2_d-vectors_train.py"

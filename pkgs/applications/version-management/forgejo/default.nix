@@ -20,13 +20,13 @@
 
 buildGoModule rec {
   pname = "forgejo";
-  version = "1.18.3-0";
+  version = "1.18.3-2";
 
   src = fetchurl {
     name = "${pname}-src-${version}.tar.gz";
     # see https://codeberg.org/forgejo/forgejo/releases
-    url = "https://codeberg.org/attachments/384fd9ab-7c64-4c29-9b1b-cdb803c48103";
-    hash = "sha256-zBGd+wPJDw7bwRvAlscqbQHDG6po3dlbpYccfanbtyU=";
+    url = "https://codeberg.org/attachments/c1178655-1589-4afe-90a8-9f5f9f45bf4d";
+    hash = "sha256-k/yD2fBEByjj8ZastgRXKI1I4MzVlD8pbUCXwCo7UoQ=";
   };
 
   vendorHash = null;
